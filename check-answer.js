@@ -1,4 +1,5 @@
 function checkAnswer() {
+  
   var score = document.getElementById("score");
   var clas = document.getElementById("class");
   var stuno = document.getElementById("stuno");
@@ -101,11 +102,10 @@ function getSelectAnswer(select) {
 
   var result = '';
 
-  for(var i = 0; i < select.length; i++){
-    if(select[i].checked){
-      result += select[i].value;
-    }
-  }
+  _.forEach(select, function(aselect) {
+    if(aselect.checked)
+      result += aselect.value
+  });
 
   return result;
 }
