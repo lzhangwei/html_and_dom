@@ -1,5 +1,5 @@
 function checkAnswer() {
-  
+
   var score = document.getElementById("score");
   var clas = document.getElementById("class");
   var stuno = document.getElementById("stuno");
@@ -22,11 +22,14 @@ function checkAnswer() {
 }
 
 function basicInfo(clas, stuno, name) {
+
   if(clas.value === '' || stuno.value === '' || name.value === ''){
     alert('班级，学号，姓名不能为空！');
     return true;
   }
+
   return false;
+
 }
 
 function checkFillblank() {
@@ -37,26 +40,17 @@ function checkFillblank() {
                    document.getElementsByName('fillblank2')];
 
   var result = 0;
-  for(var i = 0; i < answerlist.length; i++) {
-    for(var j = 0; j < answerlist[i].length; j++){
-      result += calScoreOfValue(answerlist[i][j],fillblank[i]);
-    }
-  }
+  _.forEach(answerlist, function(answers,index){
+    _.forEach(answers, function(aanswer){
+      if(_.find(fillblank[index],{'value':aanswer.answer})){
+        result += aanswer.score;
+      };
+    });
+  });
 
   console.log('填空成绩：'+result);
 
   return result;
-}
-
-function calScoreOfValue(trueanswer, values){
-
-  for(var i = 0; i < values.length; i++){
-    if(trueanswer.answer === values[i].value){
-      return trueanswer.score;
-    }
-  }
-
-  return 0;
 }
 
 function checkSelect() {
@@ -67,11 +61,11 @@ function checkSelect() {
                 document.getElementsByName('select2')];
 
   var result = 0;
-  for(var i = 0; i < answerlist.length; i++){
-    if(answerlist[i].answer === getSelectAnswer(select[i])){
-      result += answerlist[i].score;
+  _.forEach(answerlist, function(aanswer,index){
+    if(aanswer.answer === getSelectAnswer(select[index])){
+      result += aanswer.score;
     }
-  }
+  });
 
   console.log('单选成绩：'+result);
 
@@ -87,11 +81,11 @@ function checkMoreselect() {
                     document.getElementsByName('moreselect2')];
 
   var result = 0;
-  for(var i = 0; i < answerlist.length; i++){
-    if(answerlist[i].answer === getSelectAnswer(moreselect[i])){
-      result += answerlist[i].score;
+  _.forEach(answerlist, function(aanswer,index) {
+    if(aanswer.answer === getSelectAnswer(moreselect[index])){
+      result += aanswer.score;
     }
-  }
+  });
 
   console.log('多选成绩：'+result);
 
@@ -103,8 +97,9 @@ function getSelectAnswer(select) {
   var result = '';
 
   _.forEach(select, function(aselect) {
-    if(aselect.checked)
-      result += aselect.value
+    if(aselect.checked){
+      result += aselect.value;
+    }
   });
 
   return result;
@@ -118,11 +113,11 @@ function checkJudge() {
                document.getElementsByName('judge2')];
 
   var result = 0;
-  for(var i = 0; i < answerlist.length; i++) {
-    if(answerlist[i].answer === getSelectAnswer(judge[i])){
-      result += answerlist[i].score;
+  _.forEach(answerlist, function(aanswer, index){
+    if(aanswer.answer === getSelectAnswer(judge[index])){
+      result += aanswer.score;
     }
-  }
+  });
 
   console.log('判断成绩：'+result);
 
@@ -137,11 +132,11 @@ function checkSimpleanswer() {
   var simpleanswer = [document.getElementsByName('simpleanswer')[0]];
 
   var result = 0;
-  for(var i = 0; i < answerlist.length; i++) {
-    if(answerlist[i].answer === simpleanswer[i].value){
-      result += answerlist[i].score;
+  _.forEach(answerlist, function(aanswer, index){
+    if(aanswer.answer === simpleanswer[index].value){
+      result += aanswer.score;
     }
-  }
+  });
 
   console.log('简答成绩：'+result);
 
