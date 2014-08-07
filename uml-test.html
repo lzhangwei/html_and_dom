@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+  <title>UML-TEST</title>
+  <meta charset="utf-8">
+
+  <script type="text/javascript" src="check-answer.js"></script>
+  <script type="text/javascript" src="load-answerandscore.js"></script>
+
+</head>
+<html>
+  <body>
+
+    <h1>统一建模语言理论测试</h1>
+
+      <form id="form1">
+
+        <table>
+          <tr>
+            <th>考试科目: <input type="text" id="subject" value="统一建模语言UML" readonly></th>
+            <th>时间: <input type="text" id="time" value="100 分钟" readonly></th>
+            <th>得分: <input type="text" id="score" readonly></th>
+          </tr>
+          <tr>
+            <th>班级: <input type="text" id="class"></th>
+            <th>学号: <input type="text" id="stuno"></th>
+            <th>姓名: <input type="text" id="name"></th>
+          </tr>
+        </table>
+
+        <h3>一. 填空题</h3>
+          <ol>
+            <li>UML 的中文全称是: <input type="text" name="fillblank1"></li>
+            <li>对象最突出的特征是: <input type="text" name="fillblank2">
+                                <input type="text" name="fillblank2">
+                                <input type="text" name="fillblank2">
+            </li>
+          </ol>
+        <h3>二. 选择题</h3>
+          <ol>
+            <li>UML 与软件工程的关系是: </li>
+                <input type="radio" name="select1" value="a">a.UML 就是软件工程<br>
+                <input type="radio" name="select1" value="b">b.UML 参与到软件工程中软件开发过程的几个阶段<br>
+                <input type="radio" name="select1" value="c">c.UML 与软件工程无关<br>
+                <input type="radio" name="select1" value="d">d.UML 是软件工程的一部分
+            <li>Java 语言支持: </li>
+                <input type="radio" name="select2" value="a">a.单继承<br>
+                <input type="radio" name="select2" value="b">b.多继承<br>
+                <input type="radio" name="select2" value="c">c.单继承和多继承都支持<br>
+                <input type="radio" name="select2" value="d">d.单继承和多继承都不支持
+          </ol>
+        <h3>三. 多选题</h3>
+          <ol>
+            <li>用例的粒度分为以下哪三种。 </li>
+                <input type="checkbox" name="moreselect1" value="a">a.概述级<br>
+                <input type="checkbox" name="moreselect1" value="b">b.需求级<br>
+                <input type="checkbox" name="moreselect1" value="c">c.用户目标级<br>
+                <input type="checkbox" name="moreselect1" value="d">d.子功能级
+            <li>类图由以下哪三部分组成。</li>
+                <input type="checkbox" name="moreselect2" value="a">a.名称(Name)<br>
+                <input type="checkbox" name="moreselect2" value="b">b.属性(Attribute)<br>
+                <input type="checkbox" name="moreselect2" value="c">c.操作(Operation)<br>
+                <input type="checkbox" name="moreselect2" value="d">d.方法(Function)<br>
+          </ol>
+        <h3>四. 判断题</h3>
+          <ol>
+            <li>用例图只是用于和客户交流和沟通的,用于确定需求。
+              <input type="radio" name="judge1" value="V">Yes
+              <input type="radio" name="judge1" value="X">No
+            </li>
+            <li>在状态图中,终止状态在一个状态图中允许有任意多个。
+                <input type="radio" name="judge2" value="V">Yes
+                <input type="radio" name="judge2" value="X">No
+            </li>
+          </ol>
+        <h3>四. 简答题</h3>
+          <ol>
+            <li>简述什么是模型以及模型的表现形式? </li>
+              <textarea rows="6" cols="80" name="simpleanswer"></textarea>
+          </ol>
+
+        <input type="submit" onClick="return checkAnswer();">
+        <input type="reset" >
+
+      </form>
+
+  </body>
+</html>
