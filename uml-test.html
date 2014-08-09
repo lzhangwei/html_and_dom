@@ -50,15 +50,15 @@
         </header>
         <ol>
           <li>UML 与软件工程的关系是: </li>
-              <label><input type="radio" name="select1" value="a">a.UML 就是软件工程</label><br>
-              <label><input type="radio" name="select1" value="b">b.UML 参与到软件工程中软件开发过程的几个阶段</label><br>
-              <label><input type="radio" name="select1" value="c">c.UML 与软件工程无关</label><br>
-              <label><input type="radio" name="select1" value="d">d.UML 是软件工程的一部分</label>
+              <label><input type="radio" name="choice1" value="a">a.UML 就是软件工程</label><br>
+              <label><input type="radio" name="choice1" value="b">b.UML 参与到软件工程中软件开发过程的几个阶段</label><br>
+              <label><input type="radio" name="choice1" value="c">c.UML 与软件工程无关</label><br>
+              <label><input type="radio" name="choice1" value="d">d.UML 是软件工程的一部分</label>
           <li>Java 语言支持: </li>
-              <label><input type="radio" name="select2" value="a">a.单继承</label><br>
-              <label><input type="radio" name="select2" value="b">b.多继承</label><br>
-              <label><input type="radio" name="select2" value="c">c.单继承和多继承都支持</label><br>
-              <label><input type="radio" name="select2" value="d">d.单继承和多继承都不支持</label>
+              <label><input type="radio" name="choice2" value="a">a.单继承</label><br>
+              <label><input type="radio" name="choice2" value="b">b.多继承</label><br>
+              <label><input type="radio" name="choice2" value="c">c.单继承和多继承都支持</label><br>
+              <label><input type="radio" name="choice2" value="d">d.单继承和多继承都不支持</label>
         </ol>
       </section>
 
@@ -68,15 +68,15 @@
         </header>
         <ol>
           <li>用例的粒度分为以下哪三种。 </li>
-              <label><input type="checkbox" name="moreselect1" value="a">a.概述级</label><br>
-              <label><input type="checkbox" name="moreselect1" value="b">b.需求级</label><br>
-              <label><input type="checkbox" name="moreselect1" value="c">c.用户目标级</label><br>
-              <label><input type="checkbox" name="moreselect1" value="d">d.子功能级</label>
+              <label><input type="checkbox" name="multiplechoice1" value="a">a.概述级</label><br>
+              <label><input type="checkbox" name="multiplechoice1" value="b">b.需求级</label><br>
+              <label><input type="checkbox" name="multiplechoice1" value="c">c.用户目标级</label><br>
+              <label><input type="checkbox" name="multiplechoice1" value="d">d.子功能级</label>
           <li>类图由以下哪三部分组成。</li>
-              <label><input type="checkbox" name="moreselect2" value="a">a.名称(Name)</label><br>
-              <label><input type="checkbox" name="moreselect2" value="b">b.属性(Attribute)</label><br>
-              <label><input type="checkbox" name="moreselect2" value="c">c.操作(Operation)</label><br>
-              <label><input type="checkbox" name="moreselect2" value="d">d.方法(Function)</label><br>
+              <label><input type="checkbox" name="multiplechoice2" value="a">a.名称(Name)</label><br>
+              <label><input type="checkbox" name="multiplechoice2" value="b">b.属性(Attribute)</label><br>
+              <label><input type="checkbox" name="multiplechoice2" value="c">c.操作(Operation)</label><br>
+              <label><input type="checkbox" name="multiplechoice2" value="d">d.方法(Function)</label><br>
         </ol>
       </section>
 
@@ -102,7 +102,7 @@
         </header>
         <ol>
           <li>简述什么是模型以及模型的表现形式? </li>
-            <textarea rows="6" cols="80" name="simpleanswer"></textarea>
+            <textarea rows="6" cols="80" name="shortanswer1"></textarea>
         </ol>
       </section>
 
@@ -115,8 +115,11 @@
     <script type="text/javascript" src="./lib/lodash-2.4.1/lodash.js"></script>
     <script type="text/javascript" src="./lib/lodash-2.4.1/lodash.compat.js"></script>
 
-    <script type="text/javascript" src="check-answer.js"></script>
-    <script type="text/javascript" src="load-answerandscore.js"></script>
+    <script type="text/javascript" src="./script/question.js"></script>
+    <script type="text/javascript" src="./script/gapfill-question.js"></script>
+    <script type="text/javascript" src="./script/select-question.js"></script>
+    <script type="text/javascript" src="./script/shortanswer-question.js"></script>
+    <script type="text/javascript" src="./script/check-answer.js"></script>
 
   </body>
 </html>
