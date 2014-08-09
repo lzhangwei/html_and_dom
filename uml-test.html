@@ -1,90 +1,122 @@
 <!DOCTYPE html>
-<head>
-  <title>UML-TEST</title>
-  <meta charset="utf-8">
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
 
-  <script type="text/javascript" src="./lib/lodash-2.4.1/lodash.js"></script>
-  <script type="text/javascript" src="./lib/lodash-2.4.1/lodash.compat.js"></script>
+    <title>统一建模语言理论测试</title>
+  </head>
 
-  <script type="text/javascript" src="check-answer.js"></script>
-  <script type="text/javascript" src="load-answerandscore.js"></script>
-
-</head>
-<html>
   <body>
-
-    <h1>统一建模语言理论测试</h1>
-
-      <form id="form1">
-
+    <form>
+      <header>
+        <h1>统一建模语言理论测试</h1>
         <table>
           <tr>
-            <th>考试科目: <input type="text" id="subject" value="统一建模语言UML" readonly></th>
-            <th>时间: <input type="text" id="time" value="100 分钟" readonly></th>
-            <th>得分: <input type="text" id="score" readonly></th>
+            <td>考试科目: </td>
+            <td><input type="text" id="subject" value="统一建模语言UML" readonly></td>
+            <td>时间: </td>
+            <td><input type="text" id="time" value="100 分钟" readonly></td>
+            <td>得分: </td>
+            <td><input type="text" id="score" readonly></td>
           </tr>
           <tr>
-            <th>班级: <input type="text" id="class"></th>
-            <th>学号: <input type="text" id="stuno"></th>
-            <th>姓名: <input type="text" id="name"></th>
+            <td><label for="class">班级: </label></td>
+            <td><input type="text" id="class" name="class"></td>
+            <td><label for="stuno">学号: </label></td>
+            <td><input type="text" id="stuno"></td>
+            <td><label for="name">姓名: </label></td>
+            <td><input type="text" id="name"></td>
           </tr>
         </table>
+      </header>
 
-        <h3>一. 填空题</h3>
-          <ol>
-            <li>UML 的中文全称是: <input type="text" name="fillblank1"></li>
-            <li>对象最突出的特征是: <input type="text" name="fillblank2">
-                                <input type="text" name="fillblank2">
-                                <input type="text" name="fillblank2">
-            </li>
-          </ol>
-        <h3>二. 选择题</h3>
-          <ol>
-            <li>UML 与软件工程的关系是: </li>
-                <input type="radio" name="select1" value="a">a.UML 就是软件工程<br>
-                <input type="radio" name="select1" value="b">b.UML 参与到软件工程中软件开发过程的几个阶段<br>
-                <input type="radio" name="select1" value="c">c.UML 与软件工程无关<br>
-                <input type="radio" name="select1" value="d">d.UML 是软件工程的一部分
-            <li>Java 语言支持: </li>
-                <input type="radio" name="select2" value="a">a.单继承<br>
-                <input type="radio" name="select2" value="b">b.多继承<br>
-                <input type="radio" name="select2" value="c">c.单继承和多继承都支持<br>
-                <input type="radio" name="select2" value="d">d.单继承和多继承都不支持
-          </ol>
-        <h3>三. 多选题</h3>
-          <ol>
-            <li>用例的粒度分为以下哪三种。 </li>
-                <input type="checkbox" name="moreselect1" value="a">a.概述级<br>
-                <input type="checkbox" name="moreselect1" value="b">b.需求级<br>
-                <input type="checkbox" name="moreselect1" value="c">c.用户目标级<br>
-                <input type="checkbox" name="moreselect1" value="d">d.子功能级
-            <li>类图由以下哪三部分组成。</li>
-                <input type="checkbox" name="moreselect2" value="a">a.名称(Name)<br>
-                <input type="checkbox" name="moreselect2" value="b">b.属性(Attribute)<br>
-                <input type="checkbox" name="moreselect2" value="c">c.操作(Operation)<br>
-                <input type="checkbox" name="moreselect2" value="d">d.方法(Function)<br>
-          </ol>
-        <h3>四. 判断题</h3>
-          <ol>
-            <li>用例图只是用于和客户交流和沟通的,用于确定需求。
-              <input type="radio" name="judge1" value="V">Yes
-              <input type="radio" name="judge1" value="X">No
-            </li>
-            <li>在状态图中,终止状态在一个状态图中允许有任意多个。
-                <input type="radio" name="judge2" value="V">Yes
-                <input type="radio" name="judge2" value="X">No
-            </li>
-          </ol>
-        <h3>四. 简答题</h3>
-          <ol>
-            <li>简述什么是模型以及模型的表现形式? </li>
-              <textarea rows="6" cols="80" name="simpleanswer"></textarea>
-          </ol>
+      <section>
+        <header>
+          <h3>一. 填空题</h3>
+        </header>
+        <ol>
+          <li><label>UML 的中文全称是: <input type="text" name="fillblank1"></label></li>
+          <li><label for="fillblank2_1">对象最突出的特征是: </label>
+              <input type="text" id="fillblank2_1" name="fillblank2">
+              <input type="text" name="fillblank2">
+              <input type="text" name="fillblank2">
+          </li>
+        </ol>
+      </section>
 
+      <section>
+        <header>
+          <h3>二. 选择题</h3>
+        </header>
+        <ol>
+          <li>UML 与软件工程的关系是: </li>
+              <label><input type="radio" name="select1" value="a">a.UML 就是软件工程</label><br>
+              <label><input type="radio" name="select1" value="b">b.UML 参与到软件工程中软件开发过程的几个阶段</label><br>
+              <label><input type="radio" name="select1" value="c">c.UML 与软件工程无关</label><br>
+              <label><input type="radio" name="select1" value="d">d.UML 是软件工程的一部分</label>
+          <li>Java 语言支持: </li>
+              <label><input type="radio" name="select2" value="a">a.单继承</label><br>
+              <label><input type="radio" name="select2" value="b">b.多继承</label><br>
+              <label><input type="radio" name="select2" value="c">c.单继承和多继承都支持</label><br>
+              <label><input type="radio" name="select2" value="d">d.单继承和多继承都不支持</label>
+        </ol>
+      </section>
+
+      <section>
+        <header>
+          <h3>三. 多选题</h3>
+        </header>
+        <ol>
+          <li>用例的粒度分为以下哪三种。 </li>
+              <label><input type="checkbox" name="moreselect1" value="a">a.概述级</label><br>
+              <label><input type="checkbox" name="moreselect1" value="b">b.需求级</label><br>
+              <label><input type="checkbox" name="moreselect1" value="c">c.用户目标级</label><br>
+              <label><input type="checkbox" name="moreselect1" value="d">d.子功能级</label>
+          <li>类图由以下哪三部分组成。</li>
+              <label><input type="checkbox" name="moreselect2" value="a">a.名称(Name)</label><br>
+              <label><input type="checkbox" name="moreselect2" value="b">b.属性(Attribute)</label><br>
+              <label><input type="checkbox" name="moreselect2" value="c">c.操作(Operation)</label><br>
+              <label><input type="checkbox" name="moreselect2" value="d">d.方法(Function)</label><br>
+        </ol>
+      </section>
+
+      <section>
+        <header>
+          <h3>四. 判断题</h3>
+        </header>
+        <ol>
+          <li>用例图只是用于和客户交流和沟通的,用于确定需求。
+            <label><input type="radio" name="judge1" value="V">Yes</label>
+            <label><input type="radio" name="judge1" value="X">No</label>
+          </li>
+          <li>在状态图中,终止状态在一个状态图中允许有任意多个。
+            <label><input type="radio" name="judge2" value="V">Yes</label>
+            <label><input type="radio" name="judge2" value="X">No</label>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <header>
+          <h3>四. 简答题</h3>
+        </header>
+        <ol>
+          <li>简述什么是模型以及模型的表现形式? </li>
+            <textarea rows="6" cols="80" name="simpleanswer"></textarea>
+        </ol>
+      </section>
+
+      <footer>
         <input type="submit" onClick="return checkAnswer();">
-        <input type="reset" >
+      </footer>
 
-      </form>
+    </form>
+
+    <script type="text/javascript" src="./lib/lodash-2.4.1/lodash.js"></script>
+    <script type="text/javascript" src="./lib/lodash-2.4.1/lodash.compat.js"></script>
+
+    <script type="text/javascript" src="check-answer.js"></script>
+    <script type="text/javascript" src="load-answerandscore.js"></script>
 
   </body>
 </html>

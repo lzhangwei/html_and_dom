@@ -1,5 +1,4 @@
 function checkAnswer() {
-
   var score = document.getElementById("score");
   var clas = document.getElementById("class");
   var stuno = document.getElementById("stuno");
@@ -13,8 +12,6 @@ function checkAnswer() {
 
   result = checkFillblank() + checkSelect() + checkMoreselect()
             + checkJudge() + checkSimpleanswer();
-
-  console.log('总成绩：'+result);
 
   score.value = result + '分';
 
@@ -48,8 +45,6 @@ function checkFillblank() {
     });
   });
 
-  console.log('填空成绩：'+result);
-
   return result;
 }
 
@@ -66,8 +61,6 @@ function checkSelect() {
       result += aanswer.score;
     }
   });
-
-  console.log('单选成绩：'+result);
 
   return result;
 
@@ -86,8 +79,6 @@ function checkMoreselect() {
       result += aanswer.score;
     }
   });
-
-  console.log('多选成绩：'+result);
 
   return result;
 }
@@ -119,8 +110,6 @@ function checkJudge() {
     }
   });
 
-  console.log('判断成绩：'+result);
-
   return result;
 
 }
@@ -137,8 +126,6 @@ function checkSimpleanswer() {
       result += aanswer.score;
     }
   });
-
-  console.log('简答成绩：'+result);
 
   return result;
 }
