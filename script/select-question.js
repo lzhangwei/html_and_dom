@@ -13,9 +13,7 @@ SelectQuestion.prototype.caculateScore = function(){
   var value = '';
 
   _.forEach(selects, function(item) {
-    if(item.checked){
-      value += item.value;
-    }
+    value += (item.checked ? item.value : '');
   });
 
   if(value === this.answer){

@@ -1,4 +1,5 @@
 function checkAnswer() {
+  var scorediv = document.getElementById("scores");
   var score = document.getElementById("score");
   var clas = document.getElementById("class");
   var stuno = document.getElementById("stuno");
@@ -11,8 +12,8 @@ function checkAnswer() {
   var result = 0;
 
   result = calculatSumScore();
-
-  score.value = result + '分';
+  scorediv.style.color='red';
+  score.innerHTML = result + '分';
 
   return false;
 }
@@ -20,18 +21,42 @@ function checkAnswer() {
 function basicInfo(clas, stuno, name) {
 
   if(clas.value === '') {
+    document.getElementById("classs").className = "has-error";
+    if(stuno.value === ''){
+      document.getElementById("stunos").className = "has-error";
+    }else{
+      document.getElementById("stunos").className = "has-success";
+    }
+    if(name.value === ''){
+      document.getElementById("names").className = "has-error";
+    }else{
+      document.getElementById("names").className = "has-success";
+    }
     alert('班级不能为空！');
     return true;
+  }else{
+    document.getElementById("classs").className = "has-success";
   }
 
   if(stuno.value === '') {
+    document.getElementById("stunos").className = "has-error";
+    if(name.value === ''){
+      document.getElementById("names").className = "has-error";
+    }else{
+      document.getElementById("names").className = "has-success";
+    }
     alert('学号不能为空！');
     return true;
+  }else{
+    document.getElementById("stunos").className = "has-success";
   }
 
   if(name.value === '') {
+    document.getElementById("names").className = "has-error";
     alert('姓名不能为空！');
     return true;
+  }else{
+    document.getElementById("names").className = "has-success";
   }
 
   return false;
