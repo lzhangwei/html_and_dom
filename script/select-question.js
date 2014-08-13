@@ -8,10 +8,9 @@ SelectQuestion.prototype.constructor = SelectQuestion;
 
 SelectQuestion.prototype.caculateScore = function(){
 
-  var selects = $('.' + this.questionName + ' input');
+  var selects = $('input[name='+this.questionName+']');
 
   var value = '';
-
   _.forEach(selects, function(item) {
     value += (item.checked ? item.value : '');
   });

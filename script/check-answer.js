@@ -1,18 +1,20 @@
-function checkAnswer() {
-    var clas = $('#class')[0];
-    var stuno = $('#stuno')[0];
-    var name = $('#name')[0];
+$(document).ready(function(){
+   $('#mybut').on('click',function(){
+       var clas = $('#class')[0];
+       var stuno = $('#stuno')[0];
+       var name = $('#name')[0];
 
-    if (basicInfo(clas, stuno, name)) {
-        return false;
-    }
+       if (basicInfo(clas, stuno, name)) {
+           return false;
+       }
 
-    var result = calculatSumScore();
-    $('#scores').css({'color': 'red'});
-    $('#score').text(result + '分');
+       var result = calculatSumScore();
+       $('#scores').css({'color': 'red'});
+       $('#score').text(result + '分');
 
-    return false;
-}
+       return false;
+   });
+});
 
 function basicInfo(clas, stuno, name) {
 
@@ -23,9 +25,7 @@ function basicInfo(clas, stuno, name) {
         $("#myModal").modal('show');
         return true;
     }
-    $('#classs').removeClass('has-error');
-    $('#stunos').removeClass('has-error');
-    $('#names').removeClass('has-error');
+    $('#classs,#stunos,#names').removeClass('has-error');
     return false;
 }
 

@@ -8,7 +8,7 @@ ShortanswerQuestion.prototype.constructor = ShortanswerQuestion;
 
 ShortanswerQuestion.prototype.caculateScore = function () {
 
-    var blanks = $('.' + this.questionName + ' textarea');
+    var blanks = $('textarea[name='+this.questionName+']');
 
     if (blanks[0].value === this.answer) {
         return this.score;

@@ -8,7 +8,8 @@ GapfillQuestion.prototype.constructor = GapfillQuestion;
 
 GapfillQuestion.prototype.caculateScore = function () {
 
-    var blanks = $('.' + this.questionName + ' input');
+    var blanks = $('input[name='+this.questionName+']');
+
     var result = 0;
     var myscore = this.score;
     _.forEach(this.answer, function (item, index) {
