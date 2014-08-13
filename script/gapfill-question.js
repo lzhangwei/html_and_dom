@@ -1,22 +1,21 @@
-function GapfillQuestion(questionName,answer,score) {
-  Question.call(this,questionName,answer,score);
+function GapfillQuestion(questionName, answer, score) {
+    Question.call(this, questionName, answer, score);
 }
 
 GapfillQuestion.prototype = Object.create(Question.prototype);
 
 GapfillQuestion.prototype.constructor = GapfillQuestion;
 
-GapfillQuestion.prototype.caculateScore = function(){
+GapfillQuestion.prototype.caculateScore = function () {
 
-  var blanks = document.getElementsByName(this.questionName);
+    var blanks = $('.' + this.questionName + ' input');
+    var result = 0;
+    var myscore = this.score;
+    _.forEach(this.answer, function (item, index) {
+        if (_.some(blanks, {'value': item})) {
+            result += myscore[index];
+        }
+    });
 
-  var result = 0;
-  var myscore = this.score;
-  _.forEach(this.answer, function(item,index){
-      if(_.some(blanks,{'value':item})){
-        result += myscore[index];
-      }
-  });
-
-  return result;
+    return result;
 };

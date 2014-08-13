@@ -8,7 +8,7 @@ SelectQuestion.prototype.constructor = SelectQuestion;
 
 SelectQuestion.prototype.caculateScore = function(){
 
-  var selects = document.getElementsByName(this.questionName);
+  var selects = $('.' + this.questionName + ' input');
 
   var value = '';
 
